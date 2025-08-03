@@ -7,7 +7,7 @@ A WebGL-based 4k demo created for Assembly 2025. This demo combines procedural g
 - WebGL shader-based graphics with animated effects and camera movements
 - Synchronized music using SoundBox
 - Interactive start with click-to-play
-- Extremely optimized codebase (current size: 3911 bytes)
+- Golfed and minimized bootsrap fo a shader and a music. Empty shader & and music without speech synthesis is 2757 bytes.
 
 ## Quick Start
 
@@ -20,7 +20,6 @@ A WebGL-based 4k demo created for Assembly 2025. This demo combines procedural g
 ### Project Structure
 
 - `demo.html` - Main demo file containing graphics and music code
-- `4demo-shader.glsl` - Unminified shader code
 - `buildScript-soundbox.js` - Build script for optimization
 - `package.json` - Project dependencies
 
@@ -46,6 +45,8 @@ GLSL shader code should be placed between special comments:
     ...shadercode here
 //*--
 ```
+
+Use only the time (uniform float t;) as a input in the shader.
 
 ### Music
 
