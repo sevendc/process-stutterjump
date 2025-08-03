@@ -1,0 +1,16 @@
+{
+  "name": "4kdemo",
+  "version": "1.0.0",
+  "description": "for small things",
+  "scripts": {    
+    "build": "node buildScript-soundbox.js demo.html"
+  },
+  "author": "seven_dc",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "roadroller": "^2.1.0",
+    "terser": "^5.36.0",
+    "uglify-js": "^3.17.4",
+    "webpack-glsl-minify": "^1.5.0"
+  }
+}

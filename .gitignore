@@ -1,0 +1,6 @@
+node_modules/
+demo-build.html
+minifiedScript.js  
+output.js
+4demo-shader.glsl
+4demo-shader.glslmin
