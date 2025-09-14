@@ -1,7 +1,10 @@
 {
   "name": "4kdemo",
   "version": "1.0.0",
-  "description": "for small things",
+  "engines": {
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "description": "4k Demo building script",
   "scripts": {    
     "build": "node buildScript-soundbox.js demo.html"
   },

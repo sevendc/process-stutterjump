@@ -109,8 +109,7 @@ exec(`npx webpack-glsl-minify ./4demo-shader.glsl --output sourceOnly --preserve
       unsafe : true
     } }).code; 
     console.log("uglify:", minifiedScriptUglify.length, " vs tenser:", minifiedScriptTenser.length);
-    const minifiedScript = minifiedScriptUglify.length <= minifiedScriptTenser.length ? minifiedScriptUglify : minifiedScriptTenser;
-    //console.log("--", minifiedScript2);
+    const minifiedScript = minifiedScriptUglify.length <= minifiedScriptTenser.length ? minifiedScriptUglify : minifiedScriptTenser;   
 
     console.log("Minified script: ", minifiedScript.length);
     fs.writeFileSync("minifiedScript.js", minifiedScript, 'utf8');
@@ -153,9 +152,7 @@ exec(`npx webpack-glsl-minify ./4demo-shader.glsl --output sourceOnly --preserve
     packer.optimize().then((val) =>{
       console.log("packer:", val);
       const { firstLine, secondLine } = packer.makeDecoder();
-      console.log("firstLine", firstLine.length, "secondLine", secondLine.length, "total:",  firstLine.length+secondLine.length)
-      //console.log(firstLine + secondLine);
-      //console.log("updatedHtmlContent", updatedHtmlContent);
+      console.log("firstLine", firstLine.length, "secondLine", secondLine.length, "total:",  firstLine.length+secondLine.length)     
       const final = updatedHtmlContent + "<script>"+ firstLine + secondLine +"</script>";
       const buildFilePath = path.resolve(__dirname, name + '-build.html');
       fs.writeFileSync(buildFilePath, final, 'utf8');

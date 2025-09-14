@@ -54,7 +54,7 @@ void main(){
         o+=min(exp(-e*1e5)/7e1,.01);                            
     }    
     o.r += max((sin(g*5.+t))*.2, 0.0);
-    o += d; //+sin(k.x*a)*.5;
+    o += d; 
     o.rgb *= clamp((min(t, 101. - t) / 3.), 0.0, 1.0); // fade in and out
     gl_FragColor = vec4(o.xyz,1.) * vec4(.61,.6,.62,1.);       
 }//*--`)
@@ -461,29 +461,21 @@ t++;
 //    or certain effects), you can reduce the size of the player routine even
 //    further by deleting the code.
 
-// seven_dc totally golfed this!  
-// 4459.830078125 ms before I golfed the rendering f
+// NOTE: seven_dc totally golfed this!  
+
+
     // Oscillators
      var ms = (v) => Math.sin(v * 6.283184)   // osc_sin         
 
      var mf = (n) => 0.003959503758 * (2 ** ((n - 128) / 12)) // getnotefreq
 
     var createNote = function (instr, n, rowLen) {
-        //var osc1 = mOscillators[instr.i[0]],
-            //o1vol = instr.i[1],
-            //o1xenv = instr.i[3]/32,
-          //  osc2 = mOscillators[instr.i[4]],
-            //o2vol = instr.i[5],
-            //o2xenv = instr.i[8]/32,
-            //noiseVol = instr.i[9],
+        
         var attack = instr.i[10] * instr.i[10] * 4,
             sustain = instr.i[11] * instr.i[11] * 4,
             release = instr.i[12] * instr.i[12] * 4,
-            size = attack + sustain + release,
-            //releaseInv = 1 / release,
-            //expDecay = -instr.i[13]/16,
-            arp = instr.i[14];
-            //arpInterval = rowLen * (2 **(2 - instr.i[15]));
+            size = attack + sustain + release,        
+            arp = instr.i[14];            
 
         var noteBuf = new Int32Array(size);
 
@@ -725,7 +717,6 @@ t++;
     };   
     
 
-//CPlayer()
 c =()=>{
   C.innerHTML=b=generate()
   if (b === 1.) {   
@@ -736,7 +727,7 @@ c =()=>{
         B.play()
         
         // append B to body
-        // This for seeking the demo. remove in  final build like the debug
+        // This for seeking the demo. remove in final build like the debug
         // -- dev start
         B.controls = true;
         B.style.cssText="width:100%;position:fixed;bottom:0px"
